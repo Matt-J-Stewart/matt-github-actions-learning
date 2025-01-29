@@ -1,6 +1,6 @@
 name: hello-world
 
-on: 
+on:
   workflow_dispatch:
     inputs:
       description: 'Purge Date'
@@ -9,7 +9,6 @@ on:
       options:
       - A
       - B
-
 # on: workflow_dispatch:
 #   inputs:
 #     purgeDate:
