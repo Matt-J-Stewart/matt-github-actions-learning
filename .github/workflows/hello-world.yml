@@ -7,7 +7,7 @@ name: hello-world
 #       required: true
 #       type: string
 
-on: push:
+on: push
 
 jobs:
   hello-world-job:
