@@ -1,13 +1,14 @@
 name: hello-world
 
-on: workflow_dispatch
-  inputs:
-    description: 'Purge Date'
-    required: true
-    type: choice
-    options:
-    - A
-    - B
+on: 
+  workflow_dispatch:
+    inputs:
+      description: 'Purge Date'
+      required: true
+      type: choice
+      options:
+      - A
+      - B
 
 # on: workflow_dispatch:
 #   inputs:
