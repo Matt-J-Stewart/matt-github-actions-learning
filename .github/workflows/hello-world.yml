@@ -1,29 +1,28 @@
-name: hello-world
-
 on:
   workflow_dispatch:
     inputs:
-      description: 'Purge Date'
-      required: true
-      type: choice
-      options:
-      - A
-      - B
-# on: workflow_dispatch:
-#   inputs:
-#     purgeDate:
-#       description: 'Date to purge records from'
-#       required: true
-#       type: string
+      logLevel:
+        description: 'Log level'
+        required: true
+        default: 'warning'
+        type: choice
+        options:
+        - info
+        - warning
+        - debug
+      tags:
+        description: 'Test scenario tags'
+        required: false
+        type: boolean
 
-#on: push
 
 jobs:
-  hello-world-job:
-  
+  log-the-inputs:
     runs-on: ubuntu-latest
-
     steps:
-      - name: check out repository code
-        uses: actions/checkout@v4
-      - run: echo "$(cat hello_world.txt)"
+      - run: |
+          echo "Log level: $LEVEL"
+          echo "Tags: $TAGS"
+        env:
+          LEVEL: ${{ inputs.logLevel }}
+          TAGS: ${{ inputs.tags }}
