@@ -1,11 +1,13 @@
 name: hello-world
 
-on: workflow_dispatch:
-  inputs:
-    purgeDate:
-      description: 'Date to purge records from'
-      required: true
-      type: string
+# on: workflow_dispatch:
+#   inputs:
+#     purgeDate:
+#       description: 'Date to purge records from'
+#       required: true
+#       type: string
+
+on: push:
 
 jobs:
   hello-world-job:
