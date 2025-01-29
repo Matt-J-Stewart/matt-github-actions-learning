@@ -1,5 +1,14 @@
 name: hello-world
 
+on: workflow_dispatch:
+  inputs:
+    description: 'Purge Date'
+    required: true
+    type: choice
+    options:
+    - A
+    - B
+
 # on: workflow_dispatch:
 #   inputs:
 #     purgeDate:
@@ -7,7 +16,7 @@ name: hello-world
 #       required: true
 #       type: string
 
-on: push
+#on: push
 
 jobs:
   hello-world-job:
